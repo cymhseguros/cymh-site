@@ -1,0 +1,1670 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Google Consent Mode (Baseline) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // Define default consent state
+      if (!localStorage.getItem("cymh_consent")) {
+        gtag("consent", "default", {
+          ad_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          analytics_storage: "denied",
+          wait_for_update: 500,
+        });
+      } else {
+        const saved = JSON.parse(localStorage.getItem("cymh_consent"));
+        gtag("consent", "default", saved);
+      }
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-WV37T2L8");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <title>Nossa História — CYMH Corretora de Seguros</title>
+    <meta
+      name="description"
+      content="Conheça a história da CYMH Seguros: desde 1998 protegendo pessoas, famílias e empresas com ética, transparência e compromisso verdadeiro."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap"
+    /></noscript>
+    <style>
+      :root {
+        --navy: #0a1e3d;
+        --navy-mid: #122d56;
+        --navy-light: #1b3f72;
+        --blue: #1e4d8c;
+        --white: #ffffff;
+        --offwhite: #f5f7fa;
+        --gray-100: #eef1f5;
+        --gray-300: #cdd4de;
+        --gray-500: #6b7a8d;
+        --gray-700: #3a4a5c;
+        --green-trust: #1a8f4c;
+        --gold-star: #e8a317;
+        --transition: all 0.3s ease;
+        --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.06);
+        --shadow-md: 0 4px 16px rgba(10, 30, 61, 0.1);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "IBM Plex Sans", system-ui, sans-serif;
+        background: var(--offwhite);
+        color: var(--navy);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ── Buttons ── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1.25rem;
+        font-weight: 600;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: var(--transition);
+        cursor: pointer;
+        border: none;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        font-family: inherit;
+      }
+      .btn-primary {
+        background: var(--navy);
+        color: var(--white);
+      }
+      .btn-primary:hover {
+        background: var(--navy-light);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+      .btn-outline:hover {
+        border-color: var(--white);
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .btn-secondary {
+        background: var(--white);
+        color: var(--navy);
+        border: 1px solid var(--gray-300);
+      }
+      .btn-secondary:hover {
+        border-color: var(--navy);
+      }
+      @media (min-width: 768px) {
+        .btn {
+          width: auto;
+          padding: 0.85rem 1.75rem;
+        }
+      }
+
+      /* ── Navbar ── */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: var(--white);
+        border-bottom: 1px solid var(--gray-100);
+        transition: var(--transition);
+      }
+      .navbar.scrolled {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      }
+      .nav-container {
+        padding: 0.75rem 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .logo img {
+        height: 36px;
+        width: auto;
+        display: block;
+      }
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--navy);
+        cursor: pointer;
+        padding: 0.25rem;
+      }
+      .mobile-menu-btn svg {
+        width: 26px;
+        height: 26px;
+      }
+      .mobile-drawer {
+        position: fixed;
+        top: 62px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        box-shadow: var(--shadow-md);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+      }
+      .mobile-drawer.active {
+        transform: translateY(0);
+      }
+      .mobile-drawer a {
+        padding: 0.6rem 0;
+        color: var(--navy);
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid var(--gray-100);
+      }
+      .mobile-drawer .mobile-cta {
+        color: var(--white) !important;
+        background: var(--navy);
+        border: none;
+        border-bottom: none;
+        padding: 0.85rem 1.25rem;
+        border-radius: 3px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+      .mobile-drawer .mobile-cta svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--white);
+      }
+      .mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      @media (min-width: 992px) {
+        .mobile-actions {
+          display: none;
+        }
+      }
+      .mobile-wa-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--navy);
+        border-radius: 3px;
+        color: var(--white);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .mobile-wa-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--white);
+      }
+
+      @media (min-width: 992px) {
+        .mobile-wa-btn {
+          display: none;
+        }
+        .nav-container {
+          padding: 0 2rem;
+          height: 72px;
+        }
+        .logo img {
+          height: 46px;
+        }
+        .mobile-menu-btn {
+          display: none;
+        }
+        .nav-links,
+        .nav-actions {
+          display: flex;
+          align-items: center;
+        }
+        .nav-links {
+          gap: 0;
+          height: 100%;
+        }
+        .nav-links a {
+          text-decoration: none;
+          color: var(--gray-700);
+          font-weight: 500;
+          font-size: 0.9rem;
+          position: relative;
+          padding: 0 1.25rem;
+          height: 72px;
+          display: flex;
+          align-items: center;
+          transition: var(--transition);
+          letter-spacing: 0.01em;
+        }
+        .nav-links a::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 1.25rem;
+          right: 1.25rem;
+          width: auto;
+          height: 2px;
+          background: var(--navy);
+          transition: var(--transition);
+          transform: scaleX(0);
+          transform-origin: center;
+        }
+        .nav-links a:hover {
+          color: var(--navy);
+          background: var(--offwhite);
+        }
+        .nav-links a:hover::after {
+          transform: scaleX(1);
+        }
+        .nav-links a.active {
+          color: var(--navy);
+          font-weight: 600;
+        }
+        .nav-links a.active::after {
+          transform: scaleX(1);
+        }
+        .nav-actions {
+          gap: 1.25rem;
+        }
+        .nav-phone {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: var(--gray-500);
+          font-size: 0.85rem;
+          font-weight: 500;
+          text-decoration: none;
+          transition: var(--transition);
+        }
+        .nav-phone svg {
+          width: 16px;
+          height: 16px;
+          color: var(--navy);
+        }
+        .nav-phone:hover {
+          color: var(--navy);
+        }
+        .nav-divider {
+          width: 1px;
+          height: 28px;
+          background: var(--gray-100);
+        }
+        .nav-cta {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.6rem 1.25rem;
+          background: var(--navy);
+          color: var(--white);
+          border-radius: 3px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 0.9rem;
+          transition: var(--transition);
+        }
+        .nav-cta:hover {
+          background: var(--navy-light);
+        }
+        .nav-cta svg {
+          width: 18px;
+          height: 18px;
+          fill: var(--white);
+        }
+      }
+
+      /* ── Page Hero ── */
+      .page-hero {
+        background: var(--navy);
+        padding: 120px 1.5rem 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -60px;
+        width: 320px;
+        height: 320px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .page-hero::after {
+        content: "";
+        position: absolute;
+        bottom: -80px;
+        left: -40px;
+        width: 260px;
+        height: 260px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+      .page-hero-inner {
+        max-width: 780px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .page-hero-tag {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 0.75rem;
+      }
+      .page-hero h1 {
+        font-family: "Merriweather", serif;
+        font-size: 2rem;
+        color: var(--white);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      .page-hero-desc {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1.05rem;
+        line-height: 1.6;
+        max-width: 620px;
+      }
+      @media (min-width: 768px) {
+        .page-hero {
+          padding: 148px 2rem 5rem;
+        }
+        .page-hero h1 {
+          font-size: 2.75rem;
+        }
+      }
+
+      /* ── Sections ── */
+      .section {
+        padding: 3.5rem 1.25rem;
+      }
+      .bg-white {
+        background: var(--white);
+      }
+      .bg-off {
+        background: var(--offwhite);
+      }
+      .container {
+        max-width: 780px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .container-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .section-label {
+        color: var(--green-trust);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 0.75rem;
+        margin-bottom: 0.4rem;
+        display: block;
+      }
+      @media (min-width: 768px) {
+        .section {
+          padding: 5rem 2rem;
+        }
+      }
+
+      /* ── Historia Content ── */
+      .historia-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .historia-body p {
+        color: var(--gray-700);
+        font-size: 1.05rem;
+        line-height: 1.85;
+      }
+      .historia-body strong {
+        color: var(--navy);
+        font-weight: 700;
+      }
+
+      /* ── Galeria ── */
+      .galeria-section {
+        background: var(--white);
+        padding: 3.5rem 1.25rem;
+        border-top: 1px solid var(--gray-100);
+      }
+      .galeria-header {
+        text-align: center;
+        margin-bottom: 2.25rem;
+      }
+      .galeria-header h2 {
+        font-family: "Merriweather", serif;
+        font-size: 1.75rem;
+        color: var(--navy);
+        margin-top: 0.4rem;
+      }
+      .galeria-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .galeria-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 3px;
+        background: var(--gray-100);
+        cursor: pointer;
+        aspect-ratio: 4/3;
+      }
+      .galeria-item.galeria-destaque {
+        grid-column: span 2;
+        aspect-ratio: 16/7;
+      }
+      .galeria-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center; /* Padrão: centralizado */
+        display: block;
+        transition: transform 0.45s ease;
+      }
+      /* Classes auxiliares para focar em áreas específicas da foto */
+      .galeria-item img.pos-top {
+        object-position: center top;
+      }
+      .galeria-item img.pos-bottom {
+        object-position: center bottom;
+      }
+      .galeria-item img.pos-20 {
+        object-position: center 30%;
+      }
+
+      .galeria-item:hover img {
+        transform: scale(1.06);
+      }
+      .galeria-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 30, 61, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease;
+      }
+      .galeria-item:hover .galeria-overlay {
+        background: rgba(10, 30, 61, 0.35);
+      }
+      .galeria-overlay-icon {
+        opacity: 0;
+        transform: scale(0.7);
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .galeria-item:hover .galeria-overlay-icon {
+        opacity: 1;
+        transform: scale(1);
+      }
+      .galeria-overlay-icon svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--navy);
+      }
+      /* Placeholder quando sem foto */
+      .galeria-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        color: var(--gray-300);
+        background: var(--gray-100);
+        pointer-events: none;
+      }
+      .galeria-placeholder svg {
+        width: 36px;
+        height: 36px;
+      }
+      .galeria-placeholder span {
+        font-size: 0.78rem;
+        font-weight: 500;
+      }
+      /* Legenda das fotos */
+      .galeria-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 30, 61, 0.85) 0%,
+          transparent 100%
+        );
+        padding: 1.5rem 1rem 0.85rem;
+        transform: translateY(100%);
+        transition: transform 0.35s ease;
+      }
+      .galeria-item:hover .galeria-caption {
+        transform: translateY(0);
+      }
+      .galeria-caption strong {
+        display: block;
+        color: var(--white);
+        font-size: 0.9rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .galeria-caption span {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 0.78rem;
+      }
+      /* Destaque: legenda sempre visível */
+      .galeria-item.galeria-destaque .galeria-caption {
+        transform: translateY(0);
+        background: linear-gradient(
+          to top,
+          rgba(10, 30, 61, 0.75) 0%,
+          transparent 100%
+        );
+      }
+      @media (min-width: 576px) {
+        .galeria-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+        }
+        .galeria-item.galeria-destaque {
+          grid-column: span 2;
+          aspect-ratio: 16/8;
+        }
+      }
+      @media (min-width: 992px) {
+        .galeria-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.25rem;
+        }
+        .galeria-item.galeria-destaque {
+          grid-column: span 2;
+        }
+        .galeria-section {
+          padding: 5rem 2rem;
+        }
+      }
+
+      /* ── Lightbox ── */
+      .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        background: rgba(5, 15, 30, 0.96);
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+      .lightbox.open {
+        display: flex;
+      }
+      .lightbox-img {
+        max-width: 90vw;
+        max-height: 85vh;
+        border-radius: 3px;
+        object-fit: contain;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        animation: lbFadeIn 0.25s ease;
+      }
+      @keyframes lbFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.5rem;
+        background: rgba(255, 255, 255, 0.12);
+        border: none;
+        color: var(--white);
+        cursor: pointer;
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+      }
+      .lightbox-close:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .lightbox-close svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--white);
+      }
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.12);
+        border: none;
+        color: var(--white);
+        cursor: pointer;
+        border-radius: 50%;
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+      }
+      .lightbox-nav:hover {
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .lightbox-nav svg {
+        width: 24px;
+        height: 24px;
+        stroke: var(--white);
+      }
+      .lightbox-prev {
+        left: 1rem;
+      }
+      .lightbox-next {
+        right: 1rem;
+      }
+      @media (min-width: 768px) {
+        .lightbox-prev {
+          left: 2rem;
+        }
+        .lightbox-next {
+          right: 2rem;
+        }
+      }
+
+      /* ── Stats Strip ── */
+      .stats-strip {
+        background: var(--navy);
+        padding: 3rem 1.25rem;
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .stat-item strong {
+        display: block;
+        font-family: "Merriweather", serif;
+        font-size: 2.25rem;
+        color: var(--white);
+        line-height: 1;
+        margin-bottom: 0.4rem;
+      }
+      .stat-item span {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      @media (min-width: 576px) {
+        .stats-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+      @media (min-width: 768px) {
+        .stats-strip {
+          padding: 4rem 2rem;
+        }
+        .stat-item strong {
+          font-size: 2.75rem;
+        }
+      }
+
+      /* ── Values Section ── */
+      .values-grid {
+        display: grid;
+        gap: 1.25rem;
+        margin-top: 2.5rem;
+      }
+      .value-card {
+        background: var(--white);
+        border: 1px solid var(--gray-100);
+        border-top: 3px solid var(--navy);
+        border-radius: 3px;
+        padding: 1.75rem 1.5rem;
+      }
+      .value-card h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--navy);
+        margin-bottom: 0.5rem;
+      }
+      .value-card p {
+        font-size: 0.9rem;
+        color: var(--gray-500);
+        line-height: 1.6;
+      }
+      @media (min-width: 576px) {
+        .values-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (min-width: 992px) {
+        .values-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* ── CTA Section ── */
+      .cta-section {
+        background: var(--offwhite);
+        padding: 4rem 1.25rem;
+        text-align: center;
+        border-top: 1px solid var(--gray-100);
+      }
+      .cta-section h2 {
+        font-family: "Merriweather", serif;
+        font-size: 1.6rem;
+        color: var(--navy);
+        margin-bottom: 0.75rem;
+      }
+      .cta-section p {
+        color: var(--gray-500);
+        font-size: 1rem;
+        margin-bottom: 1.75rem;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cta-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+      }
+      .btn-cta-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.75rem;
+        background: var(--navy);
+        color: var(--white);
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: var(--transition);
+      }
+      .btn-cta-primary:hover {
+        background: var(--navy-light);
+      }
+      .btn-cta-primary svg {
+        width: 18px;
+        height: 18px;
+        fill: var(--white);
+      }
+      .btn-cta-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.85rem 1.75rem;
+        background: transparent;
+        color: var(--navy);
+        border: 1.5px solid var(--gray-300);
+        border-radius: 3px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: var(--transition);
+      }
+      .btn-cta-secondary:hover {
+        border-color: var(--navy);
+      }
+      @media (min-width: 768px) {
+        .cta-section {
+          padding: 5.5rem 2rem;
+        }
+        .cta-section h2 {
+          font-size: 2rem;
+        }
+      }
+
+      /* ── Footer ── */
+      .footer {
+        background: var(--navy);
+        color: rgba(255, 255, 255, 0.7);
+        padding: 1.75rem 1.25rem;
+        text-align: center;
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-WV37T2L8"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo"
+          ><img src="logo.svg" alt="CYMH Corretora de Seguros"
+        /></a>
+        <div class="mobile-actions">
+          <a
+            href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH."
+            target="_blank"
+            class="mobile-wa-btn"
+            aria-label="WhatsApp"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"
+              />
+            </svg>
+          </a>
+          <button
+            class="mobile-menu-btn"
+            id="mobile-menu-btn"
+            aria-label="Menu"
+          >
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="nossa-historia.html" class="active">Nossa História</a>
+          <a href="index.html#contato">Contato</a>
+        </nav>
+        <div class="nav-actions">
+          <a
+            href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH."
+            target="_blank"
+            class="nav-phone"
+          >
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+            (44) 99810-2769
+          </a>
+          <span class="nav-divider"></span>
+          <a
+            href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH."
+            target="_blank"
+            class="nav-cta"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"
+              />
+            </svg>
+            Atendimento
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <nav class="mobile-drawer" id="mobile-drawer">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="servicos.html" class="mobile-link">Serviços</a>
+        <a href="nossa-historia.html" class="mobile-link">Nossa História</a>
+        <a href="index.html#contato" class="mobile-link">Contato</a>
+        <a
+          href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH."
+          target="_blank"
+          class="mobile-cta"
+        >
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"
+            />
+          </svg>
+          Fale pelo WhatsApp
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ════ Page Hero ════ -->
+      <section class="page-hero">
+        <div class="page-hero-inner">
+          <span class="page-hero-tag"
+            >Tradição Familiar — Há mais de 25 anos</span
+          >
+          <h1>Nossa História</h1>
+          <p class="page-hero-desc">
+            Conheça a trajetória de uma empresa construída sobre ética,
+            confiança e compromisso genuíno com as pessoas.
+          </p>
+        </div>
+      </section>
+
+      <!-- ════ Texto Principal ════ -->
+      <section class="section bg-white">
+        <div class="container">
+          <span class="section-label">Quem Somos</span>
+          <div class="historia-body">
+            <p>
+              A <strong>CYMH Seguros</strong> nasceu em
+              <strong>1998</strong> com o propósito de oferecer proteção,
+              confiança e tranquilidade a pessoas, famílias e empresas. Nossa
+              trajetória começou em parceria com instituições bancárias, com
+              atuação voltada aos seguros de automóveis e ramos elementares. Com
+              o tempo, evoluímos junto com o mercado e com as necessidades dos
+              nossos clientes, expandindo nossa atuação para um modelo
+              <strong>independente, consultivo e multi-ramos</strong>.
+            </p>
+            <p>
+              Hoje, atuamos em todos os <strong>38 ramos de seguros</strong> em
+              todo território nacional, com o apoio de
+              <strong>22 seguradoras parceiras</strong>, oferecendo soluções
+              completas e personalizadas para diferentes perfis e necessidades.
+              Somos mais do que uma corretora: somos um grupo que une
+              experiência, visão estratégica e compromisso genuíno com aquilo
+              que mais importa — a proteção do segurado e do seu patrimônio.
+            </p>
+            <p>
+              Nossa essência é construída sobre valores
+              <strong>cristãos, católicos e familiares</strong>, que orientam
+              cada decisão, cada atendimento e cada relacionamento. Acreditamos
+              em uma atuação marcada pelo <strong>servir</strong>, pela
+              <strong
+                >ética, transparência, responsabilidade e cuidado
+                verdadeiro</strong
+              >, sempre colocando em primeiro lugar o bem-estar do segurado e de
+              sua família.
+            </p>
+            <p>
+              Com o passar dos anos, o que começou como corretora se transformou
+              em um <strong>grupo de empresas</strong>, ampliando ainda mais
+              nossa capacidade de servir. Hoje, o
+              <strong>Grupo CYMH</strong> atua em
+              <strong
+                >seguros, consórcios, financiamentos, refinanciamentos, crédito
+                com garantia imobiliária, investimentos, intermediação de vendas
+                de veículos, assessoria jurídica e alimentação artesanal</strong
+              >, sempre mantendo a mesma essência: <strong>servir</strong> com
+              excelência e cuidar de pessoas.
+            </p>
+            <p>
+              Além da <strong>CYMH Seguros</strong>, contamos com soluções em
+              <strong
+                >consórcios, financiamento de veículos, refinanciamento, CGI –
+                Crédito com Garantia Imobiliária, assessoria jurídica
+                especializada</strong
+              >
+              por meio da <strong>Advocacia Tomitão e Hoffmeister</strong>,
+              <strong>investimentos</strong> e
+              <strong
+                >intermediação de vendas de veículos com a CYTH
+                Investimentos</strong
+              >
+              e alimentação artesanal com o <strong>Carpaccio Tomitano</strong>.
+            </p>
+            <p>
+              Vivemos hoje uma fase de
+              <strong>forte evolução tecnológica e digital</strong>, com
+              presença ativa nas redes sociais e uma comunicação cada vez mais
+              próxima, ágil e estratégica. Esse movimento reflete nosso
+              compromisso em entregar um atendimento de
+              <strong>excelência</strong>, ampliar a experiência do cliente e
+              acompanhar a transformação do mercado com
+              <strong>inovação, modernidade e proximidade</strong>.
+            </p>
+            <p>
+              Na <strong>CYMH Seguros</strong>, acreditamos que proteger vai
+              além de contratar uma apólice ou um produto. É construir
+              <strong>relações de confiança</strong>, oferecer orientação segura
+              e estar presente com <strong>excelência</strong> em cada etapa da
+              jornada do cliente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ Galeria de Fotos ════ -->
+      <section class="galeria-section" id="galeria">
+        <div class="galeria-header">
+          <span class="section-label">Nossa Família</span>
+          <!-- <h2>Galeria de Fotos</h2> -->
+        </div>
+        <div class="galeria-grid" id="galeria-grid">
+          <!-- DESTAQUE — Foto de família -->
+          <div class="galeria-item galeria-destaque" data-index="0">
+            <img
+              src="public/fotos-cymh/foto-familia-cymh-2.webp"
+              alt="Família CYMH Seguros"
+              loading="lazy"
+              class="pos-top"
+            />
+            <div class="galeria-overlay">
+              <div class="galeria-overlay-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="galeria-caption">
+              <strong>A Família CYMH</strong>
+              <span>Unidos desde 1998 com o propósito de proteger pessoas</span>
+            </div>
+          </div>
+
+          <!-- Cyrillo — Pai e Fundador -->
+          <div class="galeria-item" data-index="1">
+            <img
+              src="public/fotos-cymh/foto-cyrillo-ceo.webp"
+              alt="Cyrillo — Fundador da CYMH Seguros"
+              loading="lazy"
+              class="pos-top"
+            />
+            <div class="galeria-overlay">
+              <div class="galeria-overlay-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="galeria-caption">
+              <strong>Cyrillo</strong>
+              <span>CEO e fundador</span>
+            </div>
+          </div>
+
+          <!-- Giuliana — Esposa e Advogada -->
+          <div class="galeria-item" data-index="2">
+            <img
+              src="public/fotos-cymh/giuliana-tomitao.webp"
+              alt="Giuliana — Advogada CYMH"
+              loading="lazy"
+              class="pos-20"
+            />
+            <div class="galeria-overlay">
+              <div class="galeria-overlay-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="galeria-caption">
+              <strong>Giuliana</strong>
+              <span>Esposa e Advogada</span>
+            </div>
+          </div>
+
+          <!-- Heitor — Filho -->
+          <div class="galeria-item" data-index="3">
+            <img
+              src="public/fotos-cymh/foto-heitor-gerente-v2.webp"
+              alt="Heitor — CYMH Seguros"
+              loading="lazy"
+              class="pos-top"
+            />
+            <div class="galeria-overlay">
+              <div class="galeria-overlay-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="galeria-caption">
+              <strong>Heitor</strong>
+              <span>Filho e gerente</span>
+            </div>
+          </div>
+
+          <!-- Fernanda — Filha -->
+          <div class="galeria-item" data-index="4">
+            <img
+              src="public/fotos-cymh/foto-fernanda-cymh.webp"
+              alt="Fernanda — CYMH Seguros"
+              loading="lazy"
+            />
+            <div class="galeria-overlay">
+              <div class="galeria-overlay-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="galeria-caption">
+              <strong>Fernanda</strong>
+              <span>Filha e sócia</span>
+            </div>
+          </div>
+
+          <!-- Funcionário -->
+          <div class="galeria-item" data-index="5">
+            <img
+              src="public/fotos-cymh/foto-rafa-rotta-marketing.webp"
+              alt="Rafa Rotta — Marketing CYMH Seguros"
+              loading="lazy"
+            />
+            <div class="galeria-overlay">
+              <div class="galeria-overlay-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="galeria-caption">
+              <strong>Rafa Rotta</strong>
+              <span>Marketing e Comunicação</span>
+            </div>
+          </div>
+
+          <!-- Foto de família extra -->
+          <div class="galeria-item" data-index="6">
+            <img
+              src="fotos/Jesus_Santissimo_Sacramento.jfif"
+              alt="Jesus Cristo"
+              loading="lazy"
+            />
+            <div class="galeria-overlay">
+              <div class="galeria-overlay-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="galeria-caption">
+              <strong>Jesus Cristo</strong>
+              <span>Caminho, verdade e vida</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lightbox -->
+      <div
+        class="lightbox"
+        id="lightbox"
+        role="dialog"
+        aria-label="Visualizar foto"
+      >
+        <button class="lightbox-close" id="lb-close" aria-label="Fechar">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+        <button
+          class="lightbox-nav lightbox-prev"
+          id="lb-prev"
+          aria-label="Anterior"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+        <img src="" alt="" class="lightbox-img" id="lb-img" />
+        <button
+          class="lightbox-nav lightbox-next"
+          id="lb-next"
+          aria-label="Próxima"
+        >
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- ════ Stats Strip ════ -->
+      <div class="stats-strip">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <strong>+25</strong>
+            <span>Anos de Experiência</span>
+          </div>
+          <div class="stat-item">
+            <strong>38</strong>
+            <span>Ramos de Seguros</span>
+          </div>
+          <div class="stat-item">
+            <strong>22</strong>
+            <span>Seguradoras Parceiras</span>
+          </div>
+          <div class="stat-item">
+            <strong>+5k</strong>
+            <span>Clientes Protegidos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ Nossos Valores ════ -->
+      <section class="section bg-off">
+        <div class="container-wide">
+          <div style="text-align: center; margin-bottom: 1rem">
+            <span class="section-label">O que nos guia</span>
+            <h2
+              style="
+                font-family: &quot;Merriweather&quot;, serif;
+                font-size: 1.75rem;
+                color: var(--navy);
+              "
+            >
+              Nossos Valores
+            </h2>
+          </div>
+          <div class="values-grid">
+            <div class="value-card">
+              <h3>Ética</h3>
+              <p>
+                Agimos com integridade em cada decisão, cada atendimento e cada
+                relacionamento com o cliente.
+              </p>
+            </div>
+            <div class="value-card">
+              <h3>Transparência</h3>
+              <p>
+                Comunicação clara e honesta em todas as etapas, sem letras
+                miúdas ou surpresas desagradáveis.
+              </p>
+            </div>
+            <div class="value-card">
+              <h3>Responsabilidade</h3>
+              <p>
+                Comprometidos com o bem-estar do segurado e de sua família,
+                assumindo cada atendimento com seriedade.
+              </p>
+            </div>
+            <div class="value-card">
+              <h3>Excelência</h3>
+              <p>
+                Buscamos constantemente as melhores soluções, inovando e
+                acompanhando as transformações do mercado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════ CTA ════ -->
+      <div class="cta-section">
+        <h2>Pronto para proteger o que é seu?</h2>
+        <p>
+          Entre em contato com nossa equipe e descubra a solução ideal para
+          você, sua família ou sua empresa.
+        </p>
+        <div class="cta-buttons">
+          <a
+            href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH."
+            target="_blank"
+            class="btn-cta-primary"
+            id="cta-whatsapp"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"
+              />
+            </svg>
+            Falar pelo WhatsApp
+          </a>
+          <a href="servicos.html" class="btn-cta-secondary" id="cta-servicos"
+            >Ver nossos serviços</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container-wide">
+        <p>
+          &copy; 2026 CYMH Corretora de Seguros — Todos os direitos reservados.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // ── Mobile Menu ──
+      const mobileBtn = document.getElementById("mobile-menu-btn");
+      const drawer = document.getElementById("mobile-drawer");
+      const hamburger =
+        '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+      const closeIcon =
+        '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
+
+      mobileBtn.addEventListener("click", () => {
+        drawer.classList.toggle("active");
+        mobileBtn.innerHTML = drawer.classList.contains("active")
+          ? closeIcon
+          : hamburger;
+      });
+      document.querySelectorAll(".mobile-link").forEach((l) =>
+        l.addEventListener("click", () => {
+          drawer.classList.remove("active");
+          mobileBtn.innerHTML = hamburger;
+        }),
+      );
+
+      // ── Galeria / Lightbox ──
+      (function () {
+        const lightbox = document.getElementById("lightbox");
+        const lbImg = document.getElementById("lb-img");
+        const lbClose = document.getElementById("lb-close");
+        const lbPrev = document.getElementById("lb-prev");
+        const lbNext = document.getElementById("lb-next");
+
+        // Coleta apenas itens com <img> real (não placeholders)
+        function getImages() {
+          return Array.from(
+            document.querySelectorAll("#galeria-grid .galeria-item img"),
+          );
+        }
+        let current = 0;
+
+        function openLb(idx) {
+          const imgs = getImages();
+          if (!imgs.length) return;
+          current = idx;
+          lbImg.src = imgs[current].src;
+          lbImg.alt = imgs[current].alt;
+          lightbox.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+        function closeLb() {
+          lightbox.classList.remove("open");
+          document.body.style.overflow = "";
+        }
+        function navigate(dir) {
+          const imgs = getImages();
+          if (!imgs.length) return;
+          current = (current + dir + imgs.length) % imgs.length;
+          lbImg.src = imgs[current].src;
+          lbImg.alt = imgs[current].alt;
+        }
+
+        // Clique nos itens com imagem
+        document
+          .querySelectorAll("#galeria-grid .galeria-item")
+          .forEach((item, idx) => {
+            item.addEventListener("click", () => {
+              const imgs = getImages();
+              // Descobre o índice real dentro das imgs
+              const img = item.querySelector("img");
+              if (!img) return;
+              const realIdx = imgs.indexOf(img);
+              if (realIdx >= 0) openLb(realIdx);
+            });
+          });
+
+        lbClose.addEventListener("click", closeLb);
+        lbPrev.addEventListener("click", () => navigate(-1));
+        lbNext.addEventListener("click", () => navigate(1));
+        lightbox.addEventListener("click", (e) => {
+          if (e.target === lightbox) closeLb();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (!lightbox.classList.contains("open")) return;
+          if (e.key === "Escape") closeLb();
+          if (e.key === "ArrowLeft") navigate(-1);
+          if (e.key === "ArrowRight") navigate(1);
+        });
+      })();
+
+      // ── Navbar shadow on scroll ──
+      const navbar = document.getElementById("navbar");
+      window.addEventListener(
+        "scroll",
+        () => {
+          navbar.classList.toggle("scrolled", window.scrollY > 30);
+        },
+        { passive: true },
+      );
+    </script>
+    <!-- Cookie Consent Banner -->
+    <style>
+      #consent-banner {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        background: #ffffff;
+        color: #0a1e3d;
+        padding: 1.5rem;
+        border-radius: 3px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        z-index: 10000;
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 500px;
+        border-left: 4px solid #0a1e3d;
+        font-family: "IBM Plex Sans", sans-serif;
+      }
+      @media (min-width: 768px) {
+        #consent-banner {
+          flex-direction: row;
+          align-items: center;
+          max-width: none;
+          bottom: 30px;
+          left: 30px;
+          right: 30px;
+          gap: 2rem;
+        }
+      }
+      .consent-text {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        flex: 1;
+      }
+      .consent-btns {
+        display: flex;
+        gap: 0.75rem;
+        white-space: nowrap;
+      }
+      .btn-consent {
+        padding: 0.65rem 1.5rem;
+        border-radius: 3px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 0.82rem;
+        transition: all 0.2s;
+        font-family: inherit;
+      }
+      .btn-accept {
+        background: #0a1e3d;
+        color: #fff;
+      }
+      .btn-accept:hover {
+        background: #1b3f72;
+      }
+      .btn-decline {
+        background: #eef1f5;
+        color: #6b7a8d;
+      }
+      .btn-decline:hover {
+        background: #cdd4de;
+      }
+    </style>
+    <div id="consent-banner">
+      <div class="consent-text">
+        Utilizamos cookies para melhorar sua experiência e analisar o tráfego do
+        site. Ao clicar em "Aceitar", você concorda com o uso de cookies para
+        fins de análise e marketing conforme nossa Política de Privacidade.
+      </div>
+      <div class="consent-btns">
+        <button class="btn-consent btn-decline" onclick="rejectConsent()">
+          Negar
+        </button>
+        <button class="btn-consent btn-accept" onclick="acceptConsent()">
+          Aceitar
+        </button>
+      </div>
+    </div>
+    <script>
+      function showBanner() {
+        if (!localStorage.getItem("cymh_consent")) {
+          document.getElementById("consent-banner").style.display = "flex";
+        }
+      }
+      function acceptConsent() {
+        const consentObj = {
+          ad_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          analytics_storage: "granted",
+        };
+        gtag("consent", "update", consentObj);
+        localStorage.setItem("cymh_consent", JSON.stringify(consentObj));
+        document.getElementById("consent-banner").style.display = "none";
+      }
+      function rejectConsent() {
+        const consentObj = {
+          ad_storage: "denied",
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          analytics_storage: "denied",
+        };
+        gtag("consent", "update", consentObj);
+        localStorage.setItem("cymh_consent", JSON.stringify(consentObj));
+        document.getElementById("consent-banner").style.display = "none";
+      }
+      window.addEventListener("load", showBanner);
+    </script>
+  </body>
+</html>

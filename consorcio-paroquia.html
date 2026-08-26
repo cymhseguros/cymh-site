@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Google Consent Mode (Baseline) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Define default consent state
+      if (!localStorage.getItem('cymh_consent')) {
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+          'wait_for_update': 500
+        });
+      } else {
+        const saved = JSON.parse(localStorage.getItem('cymh_consent'));
+        gtag('consent', 'default', saved);
+      }
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WV37T2L8');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>Consórcio Exclusivo Paróquia São Miguel Arcanjo — CYMH Corretora de Seguros</title>
+    <meta name="description" content="Grupo de Consórcio Exclusivo da Paróquia São Miguel Arcanjo - Maringá/PR. Venha investir e ajudar na reforma da paróquia." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap"></noscript>
+    <style>
+      :root {
+        --navy: #0a1e3d;
+        --navy-mid: #122d56;
+        --navy-light: #1b3f72;
+        --blue: #1e4d8c;
+        --white: #ffffff;
+        --offwhite: #f5f7fa;
+        --gray-100: #eef1f5;
+        --gray-300: #cdd4de;
+        --gray-500: #6b7a8d;
+        --gray-700: #3a4a5c;
+        --green-trust: #1a8f4c;
+        --gold-star: #e8a317;
+        --parish-blue: #1e3a8a; /* A specific blue for the parish theme */
+        --parish-gold: #fbbf24;
+        --transition: all 0.3s ease;
+        --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+        --shadow-md: 0 4px 16px rgba(10,30,61,0.1);
+        --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: 'IBM Plex Sans', system-ui, sans-serif;
+        background: var(--offwhite);
+        color: var(--navy);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ── Navbar ── */
+      .navbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+        background: var(--white); border-bottom: 1px solid var(--gray-100);
+        transition: var(--transition);
+      }
+      .navbar.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+      .nav-container {
+        padding: 0.75rem 1.25rem; display: flex; align-items: center;
+        justify-content: space-between; max-width: 1200px; margin: 0 auto;
+      }
+      .logo img { height: 36px; width: auto; display: block; }
+      .nav-links, .nav-actions { display: none; }
+      .mobile-menu-btn {
+        display: block; background: none; border: none;
+        color: var(--navy); cursor: pointer; padding: 0.25rem;
+      }
+      .mobile-menu-btn svg { width: 26px; height: 26px; }
+      .mobile-drawer {
+        position: fixed; top: 62px; left: 0; right: 0;
+        background: var(--white); padding: 1.25rem 1.5rem;
+        display: flex; flex-direction: column; gap: 0.75rem;
+        box-shadow: var(--shadow-md); transform: translateY(-150%);
+        transition: transform 0.3s ease; z-index: 999;
+      }
+      .mobile-drawer.active { transform: translateY(0); }
+      .mobile-drawer a { padding: 0.6rem 0; color: var(--navy); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--gray-100); }
+      .mobile-drawer .mobile-cta {
+        color: var(--white) !important; background: var(--navy);
+        border: none; border-bottom: none; padding: 0.85rem 1.25rem;
+        border-radius: 3px; font-weight: 600; text-align: center;
+        margin-top: 0.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      }
+      .mobile-drawer .mobile-cta svg { width: 18px; height: 18px; fill: var(--white); }
+      .mobile-actions { display: flex; align-items: center; gap: 0.75rem; }
+      @media(min-width:992px){ .mobile-actions { display: none; } }
+      .mobile-wa-btn {
+        display: flex; align-items: center; justify-content: center;
+        width: 40px; height: 40px; background: var(--navy); border-radius: 3px;
+        color: var(--white); text-decoration: none; transition: var(--transition);
+      }
+      .mobile-wa-btn svg { width: 20px; height: 20px; fill: var(--white); }
+      @media(min-width:992px){
+        .mobile-wa-btn { display: none; }
+        .nav-container { padding: 0 2rem; height: 72px; }
+        .logo img { height: 46px; }
+        .mobile-menu-btn { display: none; }
+        .nav-links, .nav-actions { display: flex; align-items: center; }
+        .nav-links { gap: 0; height: 100%; }
+        .nav-links a {
+          text-decoration: none; color: var(--gray-700); font-weight: 500;
+          font-size: 0.9rem; position: relative; padding: 0 1.25rem;
+          height: 72px; display: flex; align-items: center;
+          transition: var(--transition); letter-spacing: 0.01em;
+        }
+        .nav-links a::after {
+          content:''; position: absolute; bottom: 0; left: 1.25rem; right: 1.25rem;
+          height: 2px; background: var(--navy);
+          transition: var(--transition); transform: scaleX(0); transform-origin: center;
+        }
+        .nav-links a:hover { color: var(--navy); background: var(--offwhite); }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-links a.active { color: var(--navy); font-weight: 600; }
+        .nav-links a.active::after { transform: scaleX(1); }
+        .nav-actions { gap: 1.25rem; }
+        .nav-phone {
+          display: flex; align-items: center; gap: 0.5rem;
+          color: var(--gray-500); font-size: 0.85rem; font-weight: 500;
+          text-decoration: none; transition: var(--transition);
+        }
+        .nav-phone svg { width: 16px; height: 16px; color: var(--navy); }
+        .nav-phone:hover { color: var(--navy); }
+        .nav-divider { width: 1px; height: 28px; background: var(--gray-100); }
+        .nav-cta {
+          display: inline-flex; align-items: center; gap: 0.5rem;
+          padding: 0.6rem 1.25rem; background: var(--navy); color: var(--white);
+          border-radius: 3px; text-decoration: none; font-weight: 600;
+          font-size: 0.9rem; transition: var(--transition);
+        }
+        .nav-cta:hover { background: var(--navy-light); }
+        .nav-cta svg { width: 18px; height: 18px; fill: var(--white); }
+      }
+
+      /* ── Page Hero ── */
+      .page-hero {
+        background: linear-gradient(135deg, var(--parish-blue) 0%, var(--navy) 100%);
+        padding: 140px 1.5rem 5rem;
+        position: relative; overflow: hidden;
+      }
+      .page-hero::before {
+        content: ''; position: absolute; top: -60px; right: -60px;
+        width: 320px; height: 320px; background: rgba(255,255,255,0.05);
+        border-radius: 50%; pointer-events: none;
+      }
+      .page-hero::after {
+        content: ''; position: absolute; bottom: -80px; left: -40px;
+        width: 250px; height: 250px; background: rgba(251,191,36,0.1); /* Gold accent */
+        border-radius: 50%; pointer-events: none;
+      }
+      .page-hero-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; text-align: center; }
+      .page-hero-tag {
+        display: inline-block; font-size: 0.8rem; font-weight: 700;
+        text-transform: uppercase; letter-spacing: 2px;
+        color: var(--parish-gold); margin-bottom: 1rem;
+        background: rgba(255,255,255,0.1); padding: 0.4rem 1rem; border-radius: 50px;
+      }
+      .page-hero h1 {
+        font-family: 'Merriweather', serif; font-size: 2.2rem;
+        color: var(--white); line-height: 1.2; margin-bottom: 1.25rem;
+        max-width: 900px; margin-left: auto; margin-right: auto;
+      }
+      .page-hero-desc { color: rgba(255,255,255,0.85); font-size: 1.1rem; line-height: 1.6; max-width: 700px; margin: 0 auto; }
+      @media(min-width:768px){
+        .page-hero { padding: 180px 2rem 6rem; }
+        .page-hero h1 { font-size: 3rem; }
+        .page-hero-desc { font-size: 1.2rem; }
+      }
+
+      /* ── Breadcrumb ── */
+      .breadcrumb {
+        background: var(--white); padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--gray-100);
+      }
+      .breadcrumb-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--gray-500); }
+      .breadcrumb-inner a { color: var(--navy); text-decoration: none; font-weight: 500; transition: var(--transition); }
+      .breadcrumb-inner a:hover { color: var(--blue); }
+      .breadcrumb-sep { color: var(--gray-300); }
+
+      /* ── Content Section ── */
+      .content-section { padding: 4rem 1.25rem; }
+      .container { max-width: 1200px; margin: 0 auto; }
+      .campaign-grid {
+        display: grid; gap: 3rem;
+        align-items: center;
+      }
+      @media(min-width: 992px) {
+        .campaign-grid { grid-template-columns: 1.1fr 0.9fr; gap: 4rem; }
+      }
+
+      .campaign-text h2 {
+        font-family: 'Merriweather', serif; font-size: 1.8rem;
+        color: var(--navy); margin-bottom: 1.5rem; line-height: 1.3;
+      }
+      .campaign-text p {
+        font-size: 1.05rem; color: var(--gray-700);
+        margin-bottom: 1.25rem; line-height: 1.7;
+      }
+      
+      .highlights-box {
+        background: var(--offwhite);
+        border-left: 4px solid var(--parish-gold);
+        padding: 1.5rem; border-radius: 0 6px 6px 0;
+        margin: 2rem 0;
+      }
+      .highlight-item {
+        display: flex; align-items: flex-start; gap: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .highlight-item:last-child { margin-bottom: 0; }
+      .highlight-icon {
+        color: var(--parish-gold); margin-top: 0.15rem; flex-shrink: 0;
+      }
+      .highlight-icon svg { width: 22px; height: 22px; }
+      .highlight-text strong { color: var(--navy); display: block; font-size: 1.05rem; }
+      .highlight-text span { color: var(--gray-500); font-size: 0.95rem; }
+
+      .fees-box {
+        display: flex; flex-direction: column; gap: 0.75rem;
+        margin-bottom: 2.5rem;
+      }
+      @media(min-width: 576px) {
+        .fees-box { flex-direction: row; gap: 1.5rem; }
+      }
+      .fee-item {
+        background: var(--white); border: 1px solid var(--gray-100);
+        padding: 1rem 1.25rem; border-radius: 6px; flex: 1;
+        box-shadow: var(--shadow-sm);
+      }
+      .fee-item h4 { color: var(--gray-500); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.25rem; }
+      .fee-item .rate { color: var(--navy); font-size: 1.5rem; font-weight: 700; }
+      .fee-item .rate span { font-size: 1rem; font-weight: 500; color: var(--gray-500); }
+
+      .cta-button {
+        display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem;
+        background: var(--parish-gold); color: var(--navy);
+        padding: 1rem 2rem; border-radius: 6px; font-weight: 700; font-size: 1.1rem;
+        text-decoration: none; transition: var(--transition);
+        box-shadow: 0 4px 12px rgba(251,191,36,0.3);
+        width: 100%;
+      }
+      @media(min-width: 576px) { .cta-button { width: auto; } }
+      .cta-button:hover {
+        background: #f5b000; transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(251,191,36,0.4);
+      }
+      .cta-button svg { width: 20px; height: 20px; }
+
+      .campaign-image {
+        position: relative;
+        border-radius: 12px; overflow: hidden;
+        box-shadow: var(--shadow-lg);
+      }
+      .campaign-image img {
+        width: 100%; height: auto; display: block;
+        transition: transform 0.5s ease;
+      }
+      .campaign-image:hover img { transform: scale(1.02); }
+      .campaign-image::before {
+        content: ''; position: absolute; inset: 0;
+        border: 1px solid rgba(255,255,255,0.2); border-radius: 12px;
+        pointer-events: none; z-index: 2;
+      }
+      
+      .partners-text {
+        text-align: center; margin-top: 4rem;
+        color: var(--gray-500); font-size: 0.95rem;
+        padding-top: 2rem; border-top: 1px solid var(--gray-100);
+      }
+      .partners-text strong { color: var(--navy); }
+
+      /* ── Footer ── */
+      .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 1.75rem 1.25rem; text-align: center; font-size: 0.85rem; }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV37T2L8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo"><img src="logo.svg" alt="CYMH Corretora de Seguros" /></a>
+        <div class="mobile-actions">
+          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="mobile-wa-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
+          </a>
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="servicos.html" class="active">Serviços</a>
+          <a href="nossa-historia.html">Nossa História</a>
+          <a href="index.html#contato">Contato</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="nav-phone">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            (44) 99810-2769
+          </a>
+          <span class="nav-divider" style="width:1px;height:28px;background:var(--gray-100);"></span>
+          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="nav-cta">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
+            Atendimento
+          </a>
+        </div>
+      </div>
+      <nav class="mobile-drawer" id="mobile-drawer">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="servicos.html" class="mobile-link">Serviços</a>
+        <a href="nossa-historia.html" class="mobile-link">Nossa História</a>
+        <a href="index.html#contato" class="mobile-link">Contato</a>
+        <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="mobile-cta">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
+          Fale pelo WhatsApp
+        </a>
+      </nav>
+    </header>
+
+    <!-- ════ Breadcrumb ════ -->
+    <div class="breadcrumb">
+      <div class="breadcrumb-inner">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="servicos.html">Serviços</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Consórcio Exclusivo Paróquia</span>
+      </div>
+    </div>
+
+    <!-- ════ Page Hero ════ -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <span class="page-hero-tag">Ação Solidária e Investimento</span>
+        <h1>Grupo de Consórcio Exclusivo da Paróquia São Miguel Arcanjo</h1>
+        <p class="page-hero-desc">Maringá/PR. Adquira veículos, máquinas ou equipamentos e ajude na reforma da nossa paróquia.</p>
+      </div>
+    </section>
+
+    <!-- ════ Main Content ════ -->
+    <main class="content-section bg-white">
+      <div class="container">
+        <div class="campaign-grid">
+          
+          <div class="campaign-text">
+            <h2>Invista nos seus sonhos e faça uma boa ação!</h2>
+            <p>
+              Trata-se de um Grupo de Consórcio Exclusivo da Paróquia São Miguel Arcanjo - Maringá/PR - Para a aquisição de veículos, maquinas e equipamentos.
+            </p>
+            <p>
+              Com o objetivo de ajudar na reforma da paróquia, a comercialização será destinada à paróquia. Venha você também investir e fazer esta boa ação!
+            </p>
+
+            <div class="highlights-box">
+              <div class="highlight-item">
+                <div class="highlight-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg></div>
+                <div class="highlight-text">
+                  <strong>Apenas 120 cotas</strong>
+                  <span>Grupo super exclusivo com alta chance de contemplação.</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                <div class="highlight-text">
+                  <strong>Parcelado em 60x</strong>
+                  <span>Prazos ideais que cabem no seu planejamento financeiro.</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                <div class="highlight-text">
+                  <strong>Créditos Flexíveis</strong>
+                  <span>De R$ 30.000,00 à R$ 60.000,00 para escolher o ideal para você.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="fees-box">
+              <div class="fee-item">
+                <h4>Taxa de Administração</h4>
+                <div class="rate">0,2833% <span>ao mês</span></div>
+              </div>
+              <div class="fee-item">
+                <h4>Fundo de Reserva</h4>
+                <div class="rate">0,0166% <span>ao mês</span></div>
+              </div>
+            </div>
+
+            <a href="https://forms.gle/YgK4d1XZ3j9tVQb77" target="_blank" class="cta-button">
+              Garantir minha cota 
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+          </div>
+
+          <div class="campaign-image">
+            <!-- The image src points to onde the user will likely place the uploaded image -->
+            <!-- They will need to name it 'consorcio-paroquia.png' and put it in fotos -->
+            <img src="fotos/consorcio-paroquia.png" alt="Card do Grupo Exclusivo de Consórcio - Paróquia São Miguel Arcanjo" id="promo-image" />
+          </div>
+
+        </div>
+        
+        <div class="partners-text">
+          <p>Administrado pela <strong>BR Consórcios Administradora de Consórcios Ltda / Araucaria Consórcios</strong>.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div style="max-width:1200px; margin:0 auto;">
+        <p>&copy; 2026 CYMH Corretora de Seguros — Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // ── Mobile Menu ──
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const drawer = document.getElementById('mobile-drawer');
+      const hamburger = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+      const closeIcon = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
+      mobileBtn.addEventListener('click', () => {
+        drawer.classList.toggle('active');
+        mobileBtn.innerHTML = drawer.classList.contains('active') ? closeIcon : hamburger;
+      });
+
+      // ── Navbar shadow on scroll ──
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 30);
+      }, { passive: true });
+    </script>
+  </body>
+</html>

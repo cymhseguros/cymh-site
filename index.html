@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Google Consent Mode (Baseline) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+      // Define default consent state
+      if (!localStorage.getItem('cymh_consent')) {
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied',
+          'wait_for_update': 500
+        });
+      } else {
+        const saved = JSON.parse(localStorage.getItem('cymh_consent'));
+        gtag('consent', 'default', saved);
+      }
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WV37T2L8');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <title>CYMH Corretora de Seguros em Maringá | Seguro Auto, Vida e Consórcio</title>
+    <meta name="description" content="A CYMH é sua corretora de seguros em Maringá. Soluções completas em seguro auto, seguro de vida, consórcio e financiamentos para proteger você e seu negócio." />
+    <meta name="keywords" content="corretora de seguros, maringá, seguro auto, seguro de vida, consórcio, financiamentos" />
+    <meta property="og:site_name" content="CYMH Corretora de Seguros" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CYMH Corretora de Seguros",
+      "alternateName": "CYMH",
+      "url": "https://cymhseguros.com.br/"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap"></noscript>
+    <link rel="preload" as="image" href="imagens/hero/hero-1-institucional.jpg" fetchpriority="high">
+    <style>
+      :root {
+        --navy: #0a1e3d;
+        --navy-mid: #122d56;
+        --navy-light: #1b3f72;
+        --blue: #1e4d8c;
+        --white: #ffffff;
+        --offwhite: #f5f7fa;
+        --gray-100: #eef1f5;
+        --gray-300: #cdd4de;
+        --gray-500: #6b7a8d;
+        --gray-700: #3a4a5c;
+        --green-trust: #1a8f4c;
+        --gold-star: #e8a317;
+        --transition: all 0.3s ease;
+        --shadow-sm: 0 1px 4px rgba(0,0,0,0.06);
+        --shadow-md: 0 4px 16px rgba(10,30,61,0.1);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: 'IBM Plex Sans', system-ui, sans-serif;
+        background: var(--offwhite);
+        color: var(--navy);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ── Buttons ── */
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 0.75rem 1.25rem; font-weight: 600; border-radius: 3px;
+        text-decoration: none; transition: var(--transition);
+        cursor: pointer; border: none; gap: 0.5rem;
+        font-size: 0.95rem; width: 100%;
+        font-family: inherit;
+      }
+      .btn-primary { background: var(--navy); color: var(--white); }
+      .btn-primary:hover { background: var(--navy-light); }
+      .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+      .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+      .btn-secondary { background: var(--white); color: var(--navy); border: 1px solid var(--gray-300); }
+      .btn-secondary:hover { border-color: var(--navy); }
+      .icon-sm { width: 20px; height: 20px; fill: currentColor; }
+      @media(min-width:768px){ .btn { width: auto; padding: 0.85rem 1.75rem; } }
+
+      /* ── Navbar ── */
+      .navbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+        background: var(--white); border-bottom: 1px solid var(--gray-100);
+        transition: var(--transition);
+      }
+      .navbar.scrolled { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+      .nav-container {
+        padding: 0.75rem 1.25rem; display: flex; align-items: center;
+        justify-content: space-between; max-width: 1200px; margin: 0 auto;
+      }
+      .logo img { height: 36px; width: auto; display: block; }
+      .nav-links, .nav-actions { display: none; }
+      .mobile-menu-btn {
+        display: block; background: none; border: none;
+        color: var(--navy); cursor: pointer; padding: 0.25rem;
+      }
+      .mobile-menu-btn svg { width: 26px; height: 26px; }
+      .mobile-drawer {
+        position: fixed; top: 62px; left: 0; right: 0;
+        background: var(--white); padding: 1.25rem 1.5rem;
+        display: flex; flex-direction: column; gap: 0.75rem;
+        box-shadow: var(--shadow-md); transform: translateY(-150%);
+        transition: transform 0.3s ease; z-index: 999;
+      }
+      .mobile-drawer.active { transform: translateY(0); }
+      .mobile-drawer a { padding: 0.6rem 0; color: var(--navy); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--gray-100); }
+      /* Mobile CTA button override — ensure white text on navy bg */
+      .mobile-drawer .mobile-cta {
+        color: var(--white) !important;
+        background: var(--navy);
+        border: none; border-bottom: none;
+        padding: 0.85rem 1.25rem;
+        border-radius: 3px;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 0.5rem;
+        display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      }
+      .mobile-drawer .mobile-cta svg { width: 18px; height: 18px; fill: var(--white); }
+
+      /* Mobile actions group to keep buttons on the right */
+      .mobile-actions { display: flex; align-items: center; gap: 0.75rem; }
+      @media(min-width:992px){ .mobile-actions { display: none; } }
+
+      /* Mobile header: show a small WA icon button */
+      .mobile-wa-btn {
+        display: flex; align-items: center; justify-content: center;
+        width: 40px; height: 40px;
+        background: var(--navy); border-radius: 3px;
+        color: var(--white); text-decoration: none;
+        transition: var(--transition);
+      }
+      .mobile-wa-btn svg { width: 20px; height: 20px; fill: var(--white); }
+
+      @media(min-width:992px){
+        .mobile-wa-btn { display: none; }
+        .nav-container { padding: 0 2rem; height: 72px; }
+        .logo img { height: 46px; }
+        .mobile-menu-btn { display: none; }
+        .nav-links, .nav-actions { display: flex; align-items: center; }
+        .nav-links { gap: 0; height: 100%; }
+        .nav-links a {
+          text-decoration: none; color: var(--gray-700); font-weight: 500;
+          font-size: 0.9rem; position: relative; padding: 0 1.25rem;
+          height: 72px; display: flex; align-items: center;
+          transition: var(--transition); letter-spacing: 0.01em;
+        }
+        .nav-links a::after {
+          content:''; position: absolute; bottom: 0; left: 1.25rem; right: 1.25rem;
+          width: auto; height: 2px; background: var(--navy);
+          transition: var(--transition); transform: scaleX(0); transform-origin: center;
+        }
+        .nav-links a:hover { color: var(--navy); background: var(--offwhite); }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-links a.active { color: var(--navy); font-weight: 600; }
+        .nav-links a.active::after { transform: scaleX(1); }
+
+        /* Nav actions with phone + CTA */
+        .nav-actions { gap: 1.25rem; }
+        .nav-phone {
+          display: flex; align-items: center; gap: 0.5rem;
+          color: var(--gray-500); font-size: 0.85rem; font-weight: 500;
+          text-decoration: none; transition: var(--transition);
+        }
+        .nav-phone svg { width: 16px; height: 16px; color: var(--navy); }
+        .nav-phone:hover { color: var(--navy); }
+        .nav-divider { width: 1px; height: 28px; background: var(--gray-100); }
+        .nav-cta {
+          display: inline-flex; align-items: center; gap: 0.5rem;
+          padding: 0.6rem 1.25rem; background: var(--navy); color: var(--white);
+          border-radius: 3px; text-decoration: none; font-weight: 600;
+          font-size: 0.9rem; transition: var(--transition);
+        }
+        .nav-cta:hover { background: var(--navy-light); }
+        .nav-cta svg { width: 18px; height: 18px; fill: var(--white); }
+      }
+
+      /* ── Hero Carousel ── */
+      .hero {
+        position: relative; overflow: hidden;
+        height: 85vh; min-height: 480px; max-height: 720px;
+      }
+      .hero-track {
+        display: flex; height: 100%;
+        transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+      }
+      .hero-slide {
+        min-width: 100%; height: 100%; position: relative;
+        display: flex; align-items: center;
+        padding: 100px 1.5rem 3rem;
+        background-size: cover; background-position: center;
+      }
+      .hero-slide::before {
+        content: ''; position: absolute; inset: 0;
+        background: var(--navy); opacity: 0.82; z-index: 0;
+      }
+      .slide-content {
+        position: relative; z-index: 1;
+        max-width: 1200px; margin: 0 auto; width: 100%;
+      }
+      .slide-tag {
+        display: inline-block; font-size: 0.75rem; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 2px;
+        color: rgba(255,255,255,0.7); margin-bottom: 0.75rem;
+      }
+      .slide-title {
+        font-family: 'Merriweather', serif;
+        font-size: 1.75rem; line-height: 1.25; color: var(--white);
+        margin-bottom: 1rem; font-weight: 700;
+      }
+      .slide-desc {
+        color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.5;
+        margin-bottom: 1.5rem; max-width: 540px;
+      }
+      .slide-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+      /* Carousel Controls */
+      .hero-dots {
+        position: absolute; bottom: 1.5rem; left: 50%;
+        transform: translateX(-50%); z-index: 10;
+        display: flex; gap: 0.5rem;
+      }
+      .hero-dot {
+        width: 10px; height: 10px; border-radius: 50%;
+        background: rgba(255,255,255,0.35); border: none; cursor: pointer;
+        transition: var(--transition);
+      }
+      .hero-dot.active { background: var(--white); width: 28px; border-radius: 5px; }
+
+      @media(min-width:768px){
+        .hero { height: 92vh; max-height: 800px; }
+        .hero-slide { padding: 140px 2rem 4rem; }
+        .slide-title { font-size: 2.75rem; }
+        .slide-desc { font-size: 1.15rem; }
+      }
+      @media(min-width:992px){
+        .slide-title { font-size: 3.25rem; }
+      }
+
+      /* ── Sections ── */
+      .section { padding: 3.5rem 1.25rem; }
+      .bg-white { background: var(--white); }
+      .bg-off { background: var(--offwhite); }
+      .container { max-width: 1200px; margin: 0 auto; width: 100%; }
+      .section-header { text-align: center; margin-bottom: 2.25rem; }
+      .section-label { color: var(--green-trust); font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; font-size: 0.75rem; margin-bottom: 0.4rem; display: block; }
+      .section-title { font-family: 'Merriweather', serif; font-size: 1.75rem; color: var(--navy); }
+      .section-subtitle { color: var(--gray-500); margin-top: 0.75rem; font-size: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+      @media(min-width:768px){
+        .section { padding: 5rem 2rem; }
+        .section-header { margin-bottom: 3.5rem; }
+        .section-title { font-size: 2.25rem; }
+      }
+
+      /* ── Services ── */
+      .services-grid { display: grid; gap: 1.25rem; }
+      .service-card {
+        background: var(--white); border: 1px solid var(--gray-100);
+        border-top: 3px solid var(--gray-300);
+        border-radius: 3px; padding: 2rem 1.75rem; transition: var(--transition);
+        position: relative; text-decoration: none; display: block;
+      }
+      .service-card:hover {
+        box-shadow: var(--shadow-md); border-top-color: var(--navy);
+        transform: translateY(-4px);
+      }
+      .service-card-arrow {
+        position: absolute; top: 1.5rem; right: 1.5rem;
+        width: 20px; height: 20px; color: var(--gray-300);
+        transition: var(--transition);
+      }
+      .service-card:hover .service-card-arrow { color: var(--navy); transform: translateX(3px); }
+      .service-icon {
+        width: 52px; height: 52px; background: var(--offwhite);
+        border: 1px solid var(--gray-100); border-radius: 3px;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 1.25rem; color: var(--navy);
+        transition: var(--transition);
+      }
+      .service-card:hover .service-icon { background: var(--navy); color: var(--white); border-color: var(--navy); }
+      .service-icon svg { width: 24px; height: 24px; stroke-width: 1.5; }
+      .service-card h3 { color: var(--navy); font-size: 1.15rem; margin-bottom: 0.6rem; font-weight: 700; }
+      .service-card p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.6; }
+      .service-card .cta-text {
+        display: inline-flex; align-items: center; gap: 0.35rem;
+        color: var(--navy); font-weight: 600; font-size: 0.85rem;
+        margin-top: 1.25rem; opacity: 0; transform: translateY(5px);
+        transition: var(--transition);
+      }
+      .service-card:hover .cta-text { opacity: 1; transform: translateY(0); }
+      @media(min-width:576px){ .services-grid { grid-template-columns: repeat(2,1fr); } }
+      @media(min-width:992px){ .services-grid { grid-template-columns: repeat(3,1fr); gap: 1.5rem; } }
+
+      /* ── Sobre ── */
+      .sobre-grid { display: grid; gap: 2.5rem; align-items: center; }
+      .sobre-content p { color: var(--gray-500); margin-bottom: 1rem; line-height: 1.7; }
+      .sobre-link-mais {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        color: var(--navy); font-weight: 600; font-size: 0.9rem;
+        text-decoration: none; margin-bottom: 1.5rem;
+        transition: var(--transition); border-bottom: 1.5px solid var(--gray-300);
+        padding-bottom: 1px;
+      }
+      .sobre-link-mais:hover { border-bottom-color: var(--navy); gap: 0.65rem; }
+      .sobre-image { position: relative; }
+      .img-main { width: 100%; height: auto; border-radius: 3px; box-shadow: var(--shadow-md); display: block; }
+      .img-secondary {
+        display: none; position: absolute; bottom: -30px; right: -20px;
+        width: 55%; border-radius: 3px; border: 6px solid var(--offwhite);
+        box-shadow: var(--shadow-md); z-index: 2;
+      }
+      .sobre-stats { display: flex; gap: 2rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--gray-100); }
+      .sobre-stats div strong { display: block; font-size: 1.75rem; color: var(--navy); font-family: 'Merriweather', serif; }
+      .sobre-stats div { color: var(--gray-500); font-size: 0.85rem; }
+      @media(min-width:768px){ .img-secondary { display: block; } }
+      @media(min-width:992px){ .sobre-grid { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+
+      /* ── Contato ── */
+      .contato-grid { display: grid; gap: 2rem; }
+      .contato-info { background: var(--offwhite); padding: 2rem; border-radius: 3px; border: 1px solid var(--gray-100); }
+      .contato-info h3 { color: var(--navy); font-size: 1.3rem; margin-bottom: 0.75rem; }
+      .contato-info > p { color: var(--gray-500); margin-bottom: 1.5rem; }
+      .info-item { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.25rem; }
+      .info-item svg { width: 22px; height: 22px; color: var(--navy); flex-shrink: 0; margin-top: 2px; }
+      .info-item strong { display: block; color: var(--navy); font-size: 0.95rem; }
+      .info-item span { color: var(--gray-500); font-size: 0.9rem; }
+      .contato-mapa { border-radius: 3px; overflow: hidden; border: 1px solid var(--gray-100); }
+      .contato-mapa iframe { width: 100%; height: 280px; border: 0; display: block; }
+      @media(min-width:576px){ .contato-mapa iframe { height: 350px; } }
+      @media(min-width:992px){
+        .contato-grid { grid-template-columns: 1fr 1.4fr; }
+        .contato-mapa iframe { height: 100%; min-height: 420px; }
+      }
+
+      /* ── Reviews ── */
+      .reviews-wrap { margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--gray-100); }
+      .reviews-grid { display: grid; gap: 1.25rem; }
+      .review-card { background: var(--offwhite); padding: 1.5rem; border-radius: 3px; border: 1px solid var(--gray-100); }
+      .review-card .initials { width: 40px; height: 40px; background: var(--navy); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.75rem; }
+      .review-card .text { color: var(--gray-500); font-style: italic; line-height: 1.6; font-size: 0.9rem; margin-bottom: 1rem; }
+      .review-stars { color: var(--gold-star); letter-spacing: 2px; font-size: 0.9rem; }
+      @media(min-width:768px){ .reviews-grid { grid-template-columns: repeat(3,1fr); } }
+
+      /* ── Footer ── */
+      .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 1.75rem 1.25rem; text-align: center; font-size: 0.85rem; }
+
+      /* ── Seguradoras Carousel ── */
+      .seguradoras-section {
+        background: var(--white);
+        padding: 2.75rem 0;
+        border-top: 1px solid var(--gray-100);
+        border-bottom: 1px solid var(--gray-100);
+        overflow: hidden;
+      }
+      .seguradoras-label {
+        text-align: center;
+        margin-bottom: 1.75rem;
+        padding: 0 1.25rem;
+      }
+      .seguradoras-label span {
+        color: var(--gray-500); font-size: 0.82rem; font-weight: 500;
+        text-transform: uppercase; letter-spacing: 1.5px;
+      }
+      .carousel-track-wrap {
+        overflow: hidden;
+        position: relative;
+        /* fade edges */
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      }
+      .carousel-track {
+        display: flex;
+        gap: 3.5rem;
+        width: max-content;
+        animation: scrollLogos 38s linear infinite;
+        align-items: center;
+      }
+      .carousel-track-wrap:hover .carousel-track { animation-play-state: paused; }
+      @keyframes scrollLogos {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+      }
+      .carousel-logo {
+        flex-shrink: 0;
+        display: flex; align-items: center; justify-content: center;
+        height: 52px; padding: 0 0.5rem;
+        opacity: 0.68;
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        cursor: default;
+      }
+      .carousel-logo:hover { opacity: 1; transform: scale(1.08); }
+      .carousel-logo img {
+        max-height: 44px; width: auto;
+        max-width: 130px;
+        object-fit: contain;
+        display: block;
+        filter: grayscale(100%);
+        transition: filter 0.25s ease;
+      }
+      .carousel-logo:hover img { filter: grayscale(0%); }
+
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV37T2L8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo"><img src="logo.svg" alt="CYMH Corretora de Seguros" width="150" height="46" /></a>
+        <div class="mobile-actions">
+          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="mobile-wa-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
+          </a>
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="nossa-historia.html">Nossa História</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="nav-actions">
+          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="nav-phone">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            (44) 99810-2769
+          </a>
+          <span class="nav-divider"></span>
+          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="nav-cta">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
+            Atendimento
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <nav class="mobile-drawer" id="mobile-drawer">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="servicos.html" class="mobile-link">Serviços</a>
+        <a href="nossa-historia.html" class="mobile-link">Nossa História</a>
+        <a href="#contato" class="mobile-link">Contato</a>
+        <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="mobile-cta">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
+          Fale pelo WhatsApp
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ════ Hero Carousel ════ -->
+      <section id="home" class="hero">
+        <div class="hero-track" id="hero-track">
+
+          <!-- Slide 1: Institucional -->
+          <div class="hero-slide" style="background-image:url('imagens/hero/hero-1-institucional.jpg');">
+            <div class="slide-content">
+              <span class="slide-tag">CYMH Corretora de Seguros em Maringá</span>
+              <h1 class="slide-title">Confiança e solidez para proteger você.</h1>
+              <p class="slide-desc">Sua corretora de seguros há mais de 25 anos cuidando do que é mais importante para famílias e empresas, com atendimento em Maringá e em todo território nacional.</p>
+              <div class="slide-buttons">
+                <a href="#contato" class="btn btn-primary">Fale Conosco</a>
+                <a href="#sobre" class="btn btn-outline">Conheça Nossa História</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Seguros Auto & Residencial -->
+          <div class="hero-slide" style="background-image:url('imagens/hero/hero-2-auto-residencial.jpg');">
+            <div class="slide-content">
+              <span class="slide-tag">Seguro Auto & Residencial</span>
+              <h2 class="slide-title">Seu carro e seu lar sempre protegidos.</h2>
+              <p class="slide-desc">Coberturas completas para o seu seguro auto contra colisão, roubo, incêndio e danos elétricos com assistência 24 horas.</p>
+              <div class="slide-buttons">
+                <a href="#servicos" class="btn btn-primary">Ver Coberturas</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Vida & Empresarial -->
+          <div class="hero-slide" style="background-image:url('imagens/hero/hero-3-vida-empresarial.jpg');">
+            <div class="slide-content">
+              <span class="slide-tag">Seguro de Vida & Empresarial</span>
+              <h2 class="slide-title">Segurança para quem você ama e para o seu negócio.</h2>
+              <p class="slide-desc">Os melhores planos de seguro de vida familiares e proteção sob medida para manter sua empresa funcionando com tranquilidade.</p>
+              <div class="slide-buttons">
+                <a href="#servicos" class="btn btn-primary">Saiba Mais</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Consórcios & Financiamentos -->
+          <div class="hero-slide" style="background-image:url('imagens/hero/hero-4-consorcio.jpg');">
+            <div class="slide-content">
+              <span class="slide-tag">Consórcio & Financiamentos</span>
+              <h2 class="slide-title">Realize seus planos sem pagar juros abusivos.</h2>
+              <p class="slide-desc">Opções de consórcio inteligentes e financiamentos com as melhores taxas para alavancar seus projetos pessoais e empresariais.</p>
+              <div class="slide-buttons">
+                <a href="#servicos" class="btn btn-primary">Simular Agora</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dots -->
+        <div class="hero-dots" id="hero-dots">
+          <button class="hero-dot active" data-index="0" aria-label="Slide 1"></button>
+          <button class="hero-dot" data-index="1" aria-label="Slide 2"></button>
+          <button class="hero-dot" data-index="2" aria-label="Slide 3"></button>
+          <button class="hero-dot" data-index="3" aria-label="Slide 4"></button>
+        </div>
+      </section>
+
+      <!-- ════ Serviços ════ -->
+      <section id="servicos" class="section bg-white">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Portfólio Completo</span>
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Soluções sob medida para cada necessidade, com atendimento humano e personalizado.</p>
+          </div>
+          <div class="services-grid">
+            <a href="servicos.html#seguros" class="service-card" id="card-seguros">
+              <svg class="service-card-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+              <h3>Seguros</h3>
+              <p>Auto, vida, residencial, empresarial, rural, saúde, viagem e muito mais. Trabalhamos com 22 seguradoras em 38 ramos.</p>
+              <span class="cta-text">Conhecer coberturas →</span>
+            </a>
+            <a href="servicos.html#consorcios" class="service-card" id="card-consorcios">
+              <svg class="service-card-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+              <h3>Consórcios</h3>
+              <p>Imóveis, veículos e serviços sem juros. Parceria com 6 administradoras para a melhor opção ao seu perfil.</p>
+              <span class="cta-text">Simular agora →</span>
+            </a>
+            <a href="servicos.html#financiamentos" class="service-card" id="card-financiamentos">
+              <svg class="service-card-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              <div class="service-icon"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+              <h3>Financiamentos</h3>
+              <p>Crédito para veículos, imóveis e refin. além de CGI — Crédito com Garantia Imobiliária com as melhores taxas do mercado.</p>
+              <span class="cta-text">Ver opções →</span>
+            </a>
+          </div>
+          <div style="text-align:center; margin-top:2.5rem;">
+            <a href="servicos.html" class="btn" style="background-color: var(--blue); color: var(--white); border-radius: 9999px; width: auto; display: inline-flex; padding: 0.75rem 1.5rem;">
+              Ver todos os produtos e serviços
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ════ Seguradoras Parceiras ════ -->
+      <div class="seguradoras-section" id="seguradoras">
+        <div class="seguradoras-label">
+          <span>Nossas seguradoras parceiras</span>
+        </div>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carousel-track">
+            <!-- original set -->
+            <div class="carousel-logo"><img src="seguradoras/seg-01.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-02.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-03.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-04.webp"  alt="Yelum Seguradora" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-05.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-06.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-07.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-08.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-09.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-10.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-12.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-13.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-18.webp"  alt="Sancor Seguros" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/ezze.svg"  alt="EZZE Seguros" loading="lazy" style="background-color: #002e42; padding: 6px 12px; border-radius: 4px;" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-20.webp"  alt="Justos" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-21.webp"  alt="Youse" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-23-pottencial.webp" alt="Pottencial Seguradora" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-24-akad.webp" alt="Akad Seguros" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-25-usebens.webp" alt="Usebens Seguradora" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-26-essor.webp" alt="Essor Seguradora" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-27-darwin.webp" alt="Darwin Seguros" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/dentaluni.svg" alt="Dental Uni" loading="lazy" /></div>
+            <!-- duplicate set for seamless infinite loop -->
+            <div class="carousel-logo"><img src="seguradoras/seg-01.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-02.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-03.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-04.webp"  alt="Yelum Seguradora" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-05.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-06.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-07.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-08.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-09.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-10.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-12.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-13.webp"  alt="Seguradora parceira" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-18.webp"  alt="Sancor Seguros" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/ezze.svg"  alt="EZZE Seguros" loading="lazy" style="background-color: #002e42; padding: 6px 12px; border-radius: 4px;" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-20.webp"  alt="Justos" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-21.webp"  alt="Youse" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-23-pottencial.webp" alt="Pottencial Seguradora" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-24-akad.webp" alt="Akad Seguros" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-25-usebens.webp" alt="Usebens Seguradora" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-26-essor.webp" alt="Essor Seguradora" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/seg-27-darwin.webp" alt="Darwin Seguros" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="seguradoras/dentaluni.svg" alt="Dental Uni" loading="lazy" /></div>
+          </div>
+        </div>
+      
+      <!-- ════ Administradoras de Consórcio ════ -->
+      </div>
+      </div>
+
+      <!-- ════ Sobre ════ -->
+      <section id="sobre" class="section bg-off">
+        <div class="container">
+          <div class="sobre-grid">
+            <div class="sobre-content">
+              <span class="section-label">Tradição Familiar — Há mais de 25 anos</span>
+              <h2 class="section-title" style="text-align:left;">Nossa História</h2>
+              <p>A CYMH Seguros nasceu em 1998 em Maringá, com atuação inicial em parceria com bancos na comercialização de seguro auto e ramos elementares. Com a evolução do mercado e das necessidades dos clientes, expandimos nossa atuação como corretora de seguros para um atendimento independente e consultivo, abrangendo hoje os 38 ramos de seguro.</p>
+              <p>Atualmente, somos um grupo empresarial com atuação em seguro de vida, consórcio, financiamentos, crédito com garantia imobiliária, assessoria jurídica e investimentos. Trabalhamos com 22 seguradoras e 6 administradoras de consórcio, sempre guiados pela ética, transparência e compromisso com o bem-estar do segurado e de sua família.</p>
+              <a href="nossa-historia.html" class="sobre-link-mais">Nossa história completa <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+              <div class="sobre-stats">
+                <div><strong>+25</strong> Anos de Experiência</div>
+                <div><strong>+5k</strong> Clientes Satisfeitos</div>
+              </div>
+            </div>
+            <div class="sobre-image">
+              <img src="public/fotos-cymh/foto-familia-cymh-2.webp" alt="Família CYMH Seguros" class="img-main" width="600" height="467" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- ════ Administradoras de Consórcio ════ -->
+      <div class="seguradoras-section">
+        <div class="seguradoras-label">
+          <span>Nossas administradoras de consórcio</span>
+        </div>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carousel-track-adm">
+            <!-- Set 1 -->
+            <div class="carousel-logo"><img src="administradoras/adm-01-araucaria.webp" alt="Consórcio Araucária" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-02-rodobens.svg" alt="Rodobens" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-03-servopa.svg" alt="Consórcio Servopa" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-04-embracon.webp" alt="Embracon" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-05-itau.svg" alt="Itaú Consórcio" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-06-porto.webp" alt="Porto Consórcio" loading="lazy" /></div>
+            <!-- Set 2 -->
+            <div class="carousel-logo"><img src="administradoras/adm-01-araucaria.webp" alt="Consórcio Araucária" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-02-rodobens.svg" alt="Rodobens" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-03-servopa.svg" alt="Consórcio Servopa" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-04-embracon.webp" alt="Embracon" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-05-itau.svg" alt="Itaú Consórcio" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-06-porto.webp" alt="Porto Consórcio" loading="lazy" /></div>
+            <!-- Set 3 -->
+            <div class="carousel-logo"><img src="administradoras/adm-01-araucaria.webp" alt="Consórcio Araucária" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-02-rodobens.svg" alt="Rodobens" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-03-servopa.svg" alt="Consórcio Servopa" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-04-embracon.webp" alt="Embracon" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-05-itau.svg" alt="Itaú Consórcio" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-06-porto.webp" alt="Porto Consórcio" loading="lazy" /></div>
+            <!-- Set 4 -->
+            <div class="carousel-logo"><img src="administradoras/adm-01-araucaria.webp" alt="Consórcio Araucária" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-02-rodobens.svg" alt="Rodobens" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-03-servopa.svg" alt="Consórcio Servopa" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-04-embracon.webp" alt="Embracon" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-05-itau.svg" alt="Itaú Consórcio" loading="lazy" /></div>
+            <div class="carousel-logo"><img src="administradoras/adm-06-porto.webp" alt="Porto Consórcio" loading="lazy" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ════ Contato ════ -->
+      <section id="contato" class="section bg-white">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label">Suporte Dedicado</span>
+            <h2 class="section-title">Fale Conosco</h2>
+          </div>
+          <div class="contato-grid">
+            <div class="contato-info">
+              <h3>Informações de Contato</h3>
+              <p>Estamos prontos para atender você com agilidade e transparência.</p>
+              <div class="info-item">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <div><strong>E-mail</strong><span>cymhseguros@gmail.com</span></div>
+              </div>
+              <div class="info-item">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <div><strong>WhatsApp</strong><span>(44) 99810-2769</span></div>
+              </div>
+              <div class="info-item">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <div><strong>Endereço</strong><span>Tv. Indianápolis, 81 - Zona 08, Maringá - PR, 87050-620</span></div>
+              </div>
+              <a href="https://wa.me/554498102769?text=Olá!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="btn btn-primary" style="margin-top:1.5rem;">Iniciar Atendimento</a>
+            </div>
+            <div class="contato-mapa">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.630999581631!2d-51.908965599999995!3d-23.437693199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecd185c72d26e3%3A0xc5da596dabb687f2!2sCYMH%20Corretora%20de%20Seguros!5e0!3m2!1sen!2sbr!4v1774412100880!5m2!1sen!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+          <!-- Reviews -->
+          <div class="reviews-wrap">
+            <div class="section-header">
+              <h3 class="section-title" style="font-size:1.5rem;">Avaliações de Clientes</h3>
+              <div class="review-stars" style="font-size:1.25rem;margin-top:0.5rem;">★★★★★</div>
+            </div>
+            <div class="reviews-grid">
+              <div class="review-card">
+                <div class="initials">GC</div>
+                <div class="text">"Profissional extremamente competente e confiável. Desde o primeiro atendimento demonstrou conhecimento, paciência e transparência, explicando todas as opções de forma clara. Recomendo fortemente."</div>
+                <div class="name" style="font-size:0.85rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem;">Glaucia Carmo</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <div class="review-card">
+                <div class="initials">WW</div>
+                <div class="text">"Excelente atendimento! Agradecemos pela agilidade e auxílio em todo o processo de contratação!"</div>
+                <div class="name" style="font-size:0.85rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem; margin-top:1rem;">Wandalucy WS</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+              <div class="review-card">
+                <div class="initials">FO</div>
+                <div class="text">"Ótimo atendimento, sempre que precisei do apoio do Cyrillo fui prontamente atendido independentemente do dia e da hora. Recomendo a empresa."</div>
+                <div class="name" style="font-size:0.85rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem; margin-top:1rem;">Fábio Oliveira</div>
+                <div class="review-stars">★★★★★</div>
+              </div>
+            </div>
+            <div style="text-align:center;margin-top:2.5rem;">
+              <a href="https://wa.me/554498102769?text=Olá!%20Vi%20as%20avaliações%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20CYMH." target="_blank" class="btn btn-secondary" style="font-size:0.9rem;padding:0.7rem 1.5rem;">Gostou? Fale com a gente</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 CYMH Corretora de Seguros — Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // ── Carousel Logic ──
+      const track = document.getElementById('hero-track');
+      const dots = document.querySelectorAll('.hero-dot');
+      let current = 0;
+      const total = dots.length;
+      let autoPlayInterval;
+
+      function goTo(i) {
+        current = i;
+        track.style.transform = `translateX(-${current * 100}%)`;
+        dots.forEach((d, idx) => d.classList.toggle('active', idx === current));
+      }
+      dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetAuto(); }));
+
+      function nextSlide() { goTo((current + 1) % total); }
+      function startAuto() { autoPlayInterval = setInterval(nextSlide, 5500); }
+      function resetAuto() { clearInterval(autoPlayInterval); startAuto(); }
+      startAuto();
+
+      // Touch swipe support
+      let touchStartX = 0;
+      track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; }, {passive: true});
+      track.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 50) { diff > 0 ? goTo(Math.min(current+1, total-1)) : goTo(Math.max(current-1, 0)); resetAuto(); }
+      }, {passive: true});
+
+      // ── Mobile Menu ──
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const drawer = document.getElementById('mobile-drawer');
+      const hamburger = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>';
+      const closeIcon = '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>';
+
+      mobileBtn.addEventListener('click', () => {
+        drawer.classList.toggle('active');
+        mobileBtn.innerHTML = drawer.classList.contains('active') ? closeIcon : hamburger;
+      });
+      document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+        drawer.classList.remove('active');
+        mobileBtn.innerHTML = hamburger;
+      }));
+
+      // ── Smooth Scroll ──
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          const t = document.querySelector(a.getAttribute('href'));
+          if (t) t.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // ── Navbar shadow on scroll ──
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 30);
+      }, { passive: true });
+
+      // ── Active nav link tracking (IntersectionObserver) ──
+      const sections = document.querySelectorAll('section[id]');
+      const navLinksAll = document.querySelectorAll('.nav-links a');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinksAll.forEach(a => a.classList.remove('active'));
+            const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px' });
+      sections.forEach(s => observer.observe(s));
+    </script>
+    <!-- Cookie Consent Banner -->
+    <style>
+      #consent-banner {
+        position: fixed; bottom: 20px; left: 20px; right: 20px;
+        background: #ffffff; color: #0a1e3d;
+        padding: 1.5rem; border-radius: 3px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        z-index: 10000; display: none;
+        flex-direction: column; gap: 1rem;
+        max-width: 500px; border-left: 4px solid #0a1e3d;
+        font-family: 'IBM Plex Sans', sans-serif;
+      }
+      @media(min-width: 768px) {
+        #consent-banner { flex-direction: row; align-items: center; max-width: none; bottom: 30px; left: 30px; right: 30px; gap: 2rem; }
+      }
+      .consent-text { font-size: 0.88rem; line-height: 1.5; flex: 1; }
+      .consent-btns { display: flex; gap: 0.75rem; white-space: nowrap; }
+      .btn-consent {
+        padding: 0.65rem 1.5rem; border-radius: 3px; border: none; font-weight: 600; cursor: pointer; font-size: 0.82rem; transition: all 0.2s;
+        font-family: inherit;
+      }
+      .btn-accept { background: #0a1e3d; color: #fff; }
+      .btn-accept:hover { background: #1b3f72; }
+      .btn-decline { background: #eef1f5; color: #6b7a8d; }
+      .btn-decline:hover { background: #cdd4de; }
+    </style>
+    <div id="consent-banner">
+      <div class="consent-text">
+        Utilizamos cookies para melhorar sua experiência e analisar o tráfego do site. Ao clicar em "Aceitar", você concorda com o uso de cookies para fins de análise e marketing conforme nossa Política de Privacidade.
+      </div>
+      <div class="consent-btns">
+        <button class="btn-consent btn-decline" onclick="rejectConsent()">Negar</button>
+        <button class="btn-consent btn-accept" onclick="acceptConsent()">Aceitar</button>
+      </div>
+    </div>
+    <script>
+      function showBanner() {
+        if (!localStorage.getItem('cymh_consent')) {
+          document.getElementById('consent-banner').style.display = 'flex';
+        }
+      }
+      function acceptConsent() {
+        const consentObj = {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        };
+        gtag('consent', 'update', consentObj);
+        localStorage.setItem('cymh_consent', JSON.stringify(consentObj));
+        document.getElementById('consent-banner').style.display = 'none';
+      }
+      function rejectConsent() {
+        const consentObj = {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        };
+        gtag('consent', 'update', consentObj);
+        localStorage.setItem('cymh_consent', JSON.stringify(consentObj));
+        document.getElementById('consent-banner').style.display = 'none';
+      }
+      window.addEventListener('load', showBanner);
+    </script>
+  </body>
+</html>
