@@ -387,6 +387,9 @@
       .info-item svg { width: 22px; height: 22px; color: var(--navy); flex-shrink: 0; margin-top: 2px; }
       .info-item strong { display: block; color: var(--navy); font-size: 0.95rem; }
       .info-item span { color: var(--gray-500); font-size: 0.9rem; }
+      .info-item span a { color: inherit; text-decoration: none; }
+      .info-item .info-map { display: block; width: fit-content; margin-top: 0.35rem; color: var(--navy); font-size: 0.85rem; font-weight: 600; }
+      .contato-info address { font-style: normal; }
       .contato-mapa { border-radius: 3px; overflow: hidden; border: 1px solid var(--gray-100); }
       .contato-mapa iframe { width: 100%; height: 280px; border: 0; display: block; }
       @media(min-width:576px){ .contato-mapa iframe { height: 350px; } }
@@ -758,22 +761,24 @@
             <div class="contato-info">
               <h3>Informações de Contato</h3>
               <p>Estamos prontos para atender você com agilidade e transparência.</p>
-              <div class="info-item">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <div><strong>E-mail</strong><span>cymhseguros@gmail.com</span></div>
-              </div>
-              <div class="info-item">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                <div><strong>WhatsApp</strong><span>(44) 99810-2769</span></div>
-              </div>
-              <div class="info-item">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <div><strong>Endereço</strong><span>Tv. Indianápolis, 81 - Zona 08, Maringá - PR, 87050-620</span></div>
-              </div>
+              <address>
+                <div class="info-item">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  <div><strong>E-mail</strong><span><a href="mailto:cymhseguros@gmail.com">cymhseguros@gmail.com</a></span></div>
+                </div>
+                <div class="info-item">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                  <div><strong>WhatsApp</strong><span>(44) 99810-2769</span></div>
+                </div>
+                <div class="info-item">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <div><strong>Endereço</strong><span>Tv. Indianápolis, 81 - Zona 08, Maringá - PR, 87050-620</span><a href="https://maps.google.com/?cid=14256805897961900018" target="_blank" class="info-map">Ver no Google Maps</a></div>
+                </div>
+              </address>
               <a href="https://wa.me/554498102769?text=Olá!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="btn btn-primary" style="margin-top:1.5rem;">Iniciar Atendimento</a>
             </div>
             <div class="contato-mapa">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.630999581631!2d-51.908965599999995!3d-23.437693199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecd185c72d26e3%3A0xc5da596dabb687f2!2sCYMH%20Corretora%20de%20Seguros!5e0!3m2!1sen!2sbr!4v1774412100880!5m2!1sen!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe title="Localização da CYMH Corretora de Seguros no Google Maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.630999581631!2d-51.908965599999995!3d-23.437693199999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ecd185c72d26e3%3A0xc5da596dabb687f2!2sCYMH%20Corretora%20de%20Seguros!5e0!3m2!1sen!2sbr!4v1774412100880!5m2!1sen!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
