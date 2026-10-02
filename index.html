@@ -40,10 +40,53 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "CYMH Corretora de Seguros",
-      "alternateName": "CYMH",
-      "url": "https://cymhseguros.com.br/"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://cymhseguros.com.br/#website",
+          "url": "https://cymhseguros.com.br/",
+          "name": "CYMH Corretora de Seguros",
+          "alternateName": ["CYMH Seguros", "CYMH"],
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://cymhseguros.com.br/#organization" }
+        },
+        {
+          "@type": "InsuranceAgency",
+          "@id": "https://cymhseguros.com.br/#organization",
+          "name": "CYMH Corretora de Seguros",
+          "legalName": "CYMH Corretora de Seguros LTDA",
+          "alternateName": ["CYMH Seguros", "CYMH Corretora de Seguros e Consórcios", "CYMH"],
+          "url": "https://cymhseguros.com.br/",
+          "logo": "https://cymhseguros.com.br/logo-cymh.png",
+          "image": "https://cymhseguros.com.br/public/fotos-cymh/foto-familia-cymh-2.webp",
+          "telephone": "+55-44-99810-2769",
+          "email": "cymhseguros@gmail.com",
+          "taxID": "02.459.057/0001-89",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Tv. Indianápolis, 81 - Zona 08",
+            "addressLocality": "Maringá",
+            "addressRegion": "PR",
+            "postalCode": "87050-620",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.4376932,
+            "longitude": -51.9089656
+          },
+          "hasMap": "https://maps.google.com/?cid=14256805897961900018",
+          "foundingDate": "1998",
+          "areaServed": [
+            { "@type": "City", "name": "Maringá" },
+            { "@type": "Country", "name": "Brasil" }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/cymhseguros/",
+            "https://www.facebook.com/people/Cymh-Corretora-de-Seguros-e-Cons%C3%B3rcios/100063248049268/"
+          ]
+        }
+      ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -363,6 +406,9 @@
 
       /* ── Footer ── */
       .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 1.75rem 1.25rem; text-align: center; font-size: 0.85rem; }
+      .footer p + p { margin-top: 0.4rem; }
+      .footer a { color: inherit; }
+      .footer .nowrap { white-space: nowrap; }
 
       /* ── Seguradoras Carousel ── */
       .seguradoras-section {
@@ -481,8 +527,8 @@
           <!-- Slide 1: Institucional -->
           <div class="hero-slide" style="background-image:url('imagens/hero/hero-1-institucional.jpg');">
             <div class="slide-content">
-              <span class="slide-tag">CYMH Corretora de Seguros em Maringá</span>
-              <h1 class="slide-title">Confiança e solidez para proteger você.</h1>
+              <h1 class="slide-tag">CYMH Corretora de Seguros em Maringá</h1>
+              <p class="slide-title">Confiança e solidez para proteger você.</p>
               <p class="slide-desc">Sua corretora de seguros há mais de 25 anos cuidando do que é mais importante para famílias e empresas, com atendimento em Maringá e em todo território nacional.</p>
               <div class="slide-buttons">
                 <a href="#contato" class="btn btn-primary">Fale Conosco</a>
@@ -768,6 +814,8 @@
     <footer class="footer">
       <div class="container">
         <p>&copy; 2026 CYMH Corretora de Seguros — Todos os direitos reservados.</p>
+        <p>Tv. Indianápolis, 81 - Zona 08, Maringá - PR, <span class="nowrap">87050-620</span> · <span class="nowrap">(44) 99810-2769</span> · <a href="https://www.instagram.com/cymhseguros/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/people/Cymh-Corretora-de-Seguros-e-Cons%C3%B3rcios/100063248049268/" target="_blank">Facebook</a></p>
+        <p>CYMH Corretora de Seguros LTDA · CNPJ <span class="nowrap">02.459.057/0001-89</span></p>
       </div>
     </footer>
 
