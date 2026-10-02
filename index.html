@@ -40,10 +40,53 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "CYMH Corretora de Seguros",
-      "alternateName": "CYMH",
-      "url": "https://cymhseguros.com.br/"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://cymhseguros.com.br/#website",
+          "url": "https://cymhseguros.com.br/",
+          "name": "CYMH Corretora de Seguros",
+          "alternateName": ["CYMH Seguros", "CYMH"],
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://cymhseguros.com.br/#organization" }
+        },
+        {
+          "@type": "InsuranceAgency",
+          "@id": "https://cymhseguros.com.br/#organization",
+          "name": "CYMH Corretora de Seguros",
+          "legalName": "CYMH Corretora de Seguros LTDA",
+          "alternateName": ["CYMH Seguros", "CYMH Corretora de Seguros e Consórcios", "CYMH"],
+          "url": "https://cymhseguros.com.br/",
+          "logo": "https://cymhseguros.com.br/logo-cymh.png",
+          "image": "https://cymhseguros.com.br/public/fotos-cymh/foto-familia-cymh-2.webp",
+          "telephone": "+55-44-99810-2769",
+          "email": "cymhseguros@gmail.com",
+          "taxID": "02.459.057/0001-89",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Tv. Indianápolis, 81 - Zona 08",
+            "addressLocality": "Maringá",
+            "addressRegion": "PR",
+            "postalCode": "87050-620",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -23.4376932,
+            "longitude": -51.9089656
+          },
+          "hasMap": "https://maps.google.com/?cid=14256805897961900018",
+          "foundingDate": "1998",
+          "areaServed": [
+            { "@type": "City", "name": "Maringá" },
+            { "@type": "Country", "name": "Brasil" }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/cymhseguros/",
+            "https://www.facebook.com/people/Cymh-Corretora-de-Seguros-e-Cons%C3%B3rcios/100063248049268/"
+          ]
+        }
+      ]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
