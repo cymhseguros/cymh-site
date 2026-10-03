@@ -1,43 +1,18 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <!-- Google Consent Mode (Baseline) -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-
-      // Define default consent state
-      if (!localStorage.getItem('cymh_consent')) {
-        gtag('consent', 'default', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied',
-          'wait_for_update': 500
-        });
-      } else {
-        const saved = JSON.parse(localStorage.getItem('cymh_consent'));
-        gtag('consent', 'default', saved);
-      }
-    </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WV37T2L8');</script>
-    <!-- End Google Tag Manager -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <title>CYMH Corretora de Seguros em Maringá | Seguro Auto, Vida e Consórcio</title>
-    <meta name="description" content="A CYMH é sua corretora de seguros em Maringá. Soluções completas em seguro auto, seguro de vida, consórcio e financiamentos para proteger você e seu negócio." />
-    <link rel="canonical" href="https://cymhseguros.com.br/" />
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ConsentBanner from '../components/ConsentBanner.astro';
+---
+<BaseLayout
+  title="CYMH Corretora de Seguros em Maringá | Seguro Auto, Vida e Consórcio"
+  description="A CYMH é sua corretora de seguros em Maringá. Soluções completas em seguro auto, seguro de vida, consórcio e financiamentos para proteger você e seu negócio."
+  canonical="https://cymhseguros.com.br/"
+>
+  <Fragment slot="seo">
     <meta name="keywords" content="corretora de seguros, maringá, seguro auto, seguro de vida, consórcio, financiamentos" />
     <meta property="og:site_name" content="CYMH Corretora de Seguros" />
-    <script type="application/ld+json">
+    <script is:inline type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
@@ -89,12 +64,10 @@
       ]
     }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Merriweather:wght@700&display=swap"></noscript>
+  </Fragment>
+  <Fragment slot="head">
     <link rel="preload" as="image" href="imagens/hero/hero-1-institucional.jpg" fetchpriority="high">
-    <style>
+    <style is:inline>
       :root {
         --navy: #0a1e3d;
         --navy-mid: #122d56;
@@ -469,58 +442,9 @@
       .carousel-logo:hover img { filter: grayscale(0%); }
 
     </style>
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV37T2L8"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  </Fragment>
 
-    <!-- Navbar -->
-    <header class="navbar" id="navbar">
-      <div class="nav-container">
-        <a href="#home" class="logo"><img src="logo.svg" alt="CYMH Corretora de Seguros" width="150" height="46" /></a>
-        <div class="mobile-actions">
-          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="mobile-wa-btn" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
-          </a>
-          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-          </button>
-        </div>
-
-        <!-- Desktop nav -->
-        <nav class="nav-links">
-          <a href="#home">Home</a>
-          <a href="servicos.html">Serviços</a>
-          <a href="nossa-historia.html">Nossa História</a>
-          <a href="#contato">Contato</a>
-        </nav>
-        <div class="nav-actions">
-          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="nav-phone">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            (44) 99810-2769
-          </a>
-          <span class="nav-divider"></span>
-          <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="nav-cta">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
-            Atendimento
-          </a>
-        </div>
-      </div>
-
-      <!-- Mobile Drawer -->
-      <nav class="mobile-drawer" id="mobile-drawer">
-        <a href="#home" class="mobile-link">Home</a>
-        <a href="servicos.html" class="mobile-link">Serviços</a>
-        <a href="nossa-historia.html" class="mobile-link">Nossa História</a>
-        <a href="#contato" class="mobile-link">Contato</a>
-        <a href="https://wa.me/554498102769?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20CYMH." target="_blank" class="mobile-cta">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/></svg>
-          Fale pelo WhatsApp
-        </a>
-      </nav>
-    </header>
+    <Header onHome />
 
     <main>
       <!-- ════ Hero Carousel ════ -->
@@ -625,7 +549,6 @@
             </a>
           </div>
           </div>
-        </div>
       </section>
 
 
@@ -686,7 +609,6 @@
         </div>
       
       <!-- ════ Administradoras de Consórcio ════ -->
-      </div>
       </div>
 
       <!-- ════ Sobre ════ -->
@@ -816,15 +738,9 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2026 CYMH Corretora de Seguros — Todos os direitos reservados.</p>
-        <p>Tv. Indianápolis, 81 - Zona 08, Maringá - PR, <span class="nowrap">87050-620</span> · <span class="nowrap">(44) 99810-2769</span> · <a href="https://www.instagram.com/cymhseguros/" target="_blank">Instagram</a> · <a href="https://www.facebook.com/people/Cymh-Corretora-de-Seguros-e-Cons%C3%B3rcios/100063248049268/" target="_blank">Facebook</a></p>
-        <p>CYMH Corretora de Seguros LTDA · CNPJ <span class="nowrap">02.459.057/0001-89</span></p>
-      </div>
-    </footer>
+    <Footer containerClass="container" />
 
-    <script>
+    <script is:inline>
       // ── Carousel Logic ──
       const track = document.getElementById('hero-track');
       const dots = document.querySelectorAll('.hero-dot');
@@ -896,70 +812,5 @@
       }, { rootMargin: '-40% 0px -55% 0px' });
       sections.forEach(s => observer.observe(s));
     </script>
-    <!-- Cookie Consent Banner -->
-    <style>
-      #consent-banner {
-        position: fixed; bottom: 20px; left: 20px; right: 20px;
-        background: #ffffff; color: #0a1e3d;
-        padding: 1.5rem; border-radius: 3px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-        z-index: 10000; display: none;
-        flex-direction: column; gap: 1rem;
-        max-width: 500px; border-left: 4px solid #0a1e3d;
-        font-family: 'IBM Plex Sans', sans-serif;
-      }
-      @media(min-width: 768px) {
-        #consent-banner { flex-direction: row; align-items: center; max-width: none; bottom: 30px; left: 30px; right: 30px; gap: 2rem; }
-      }
-      .consent-text { font-size: 0.88rem; line-height: 1.5; flex: 1; }
-      .consent-btns { display: flex; gap: 0.75rem; white-space: nowrap; }
-      .btn-consent {
-        padding: 0.65rem 1.5rem; border-radius: 3px; border: none; font-weight: 600; cursor: pointer; font-size: 0.82rem; transition: all 0.2s;
-        font-family: inherit;
-      }
-      .btn-accept { background: #0a1e3d; color: #fff; }
-      .btn-accept:hover { background: #1b3f72; }
-      .btn-decline { background: #eef1f5; color: #6b7a8d; }
-      .btn-decline:hover { background: #cdd4de; }
-    </style>
-    <div id="consent-banner">
-      <div class="consent-text">
-        Utilizamos cookies para melhorar sua experiência e analisar o tráfego do site. Ao clicar em "Aceitar", você concorda com o uso de cookies para fins de análise e marketing conforme nossa Política de Privacidade.
-      </div>
-      <div class="consent-btns">
-        <button class="btn-consent btn-decline" onclick="rejectConsent()">Negar</button>
-        <button class="btn-consent btn-accept" onclick="acceptConsent()">Aceitar</button>
-      </div>
-    </div>
-    <script>
-      function showBanner() {
-        if (!localStorage.getItem('cymh_consent')) {
-          document.getElementById('consent-banner').style.display = 'flex';
-        }
-      }
-      function acceptConsent() {
-        const consentObj = {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        };
-        gtag('consent', 'update', consentObj);
-        localStorage.setItem('cymh_consent', JSON.stringify(consentObj));
-        document.getElementById('consent-banner').style.display = 'none';
-      }
-      function rejectConsent() {
-        const consentObj = {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        };
-        gtag('consent', 'update', consentObj);
-        localStorage.setItem('cymh_consent', JSON.stringify(consentObj));
-        document.getElementById('consent-banner').style.display = 'none';
-      }
-      window.addEventListener('load', showBanner);
-    </script>
-  </body>
-</html>
+    <ConsentBanner />
+</BaseLayout>
